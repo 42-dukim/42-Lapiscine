@@ -6,18 +6,11 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 05:27:51 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/14 05:31:31 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/16 16:39:22 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 void	ft_ultimate_ft(int *********nbr)
 {
 	*********nbr = 42;
-}
-
-int main(){
-	int a = 1;
-	printf("%d\n", a);
-	ft_ultimate_ft(*********a);
-	printf("%d\n", a);
 }
