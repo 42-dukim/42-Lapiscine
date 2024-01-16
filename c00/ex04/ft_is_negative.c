@@ -6,22 +6,15 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 22:52:28 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/16 16:12:19 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/16 16:14:49 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
 void	ft_is_negative(int n)
 {
-	char	answer;
-
 	if (n >= 0)
-	{
-		answer = "P";
-	}
+		write(1, "P", 1);
 	else
-	{
-		answer = "N";
-	}
-	write(1, &answer, 1);
+		write(1, "N", 1);
 }
