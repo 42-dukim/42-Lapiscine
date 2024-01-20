@@ -6,7 +6,7 @@
 /*   By: dukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 18:51:38 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/19 19:40:56 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/20 17:24:17 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	is_non_printable(char ch)
 	return (0);
 }
 
-char	*trs_hex(char *c, char dec)
+char	*trs_hex(char *c, unsigned char dec)
 {
 	c[0] = '\\';
 	c[1] = (int)dec / 16 + '0';
@@ -35,16 +35,18 @@ char	*trs_hex(char *c, char dec)
 void	ft_putstr_non_printable(char *str)
 {
 	char	c[3];
+	int		i;
 
-	while (*str != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (is_non_printable(*str))
+		if (is_non_printable(str[i]))
 		{
-			trs_hex(c, *str);
+			trs_hex(c, str[i]);
 			write(1, c, 3);
 		}
 		else
-			write(1, str, 1);
-		str++;
+			write(1, &str[i], 1);
+		i++;
 	}
 }
