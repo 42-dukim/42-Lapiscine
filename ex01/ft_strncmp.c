@@ -6,11 +6,22 @@
 /*   By: dukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 19:55:46 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/19 20:13:20 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/20 16:42:31 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
+	unsigned int	i;
 
+	i = 0;
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	{
+		if (s1[i] > s2[i])
+			return (1);
+		else if (s1[i] < s2[i])
+			return (-1);
+		i++;
+	}
+	return (0);
 }
