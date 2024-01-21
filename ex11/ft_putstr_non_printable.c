@@ -6,7 +6,7 @@
 /*   By: dukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 18:51:38 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/20 17:24:17 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/21 14:04:33 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_putstr_non_printable(char *str)
 	{
 		if (is_non_printable(str[i]))
 		{
-			trs_hex(c, str[i]);
+			trs_hex(c, (unsigned char)str[i]);
 			write(1, c, 3);
 		}
 		else
