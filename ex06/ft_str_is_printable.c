@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:49:12 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/16 23:38:54 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/21 15:15:19 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_str_is_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((int)str[i] < 33 || (int)str[i] > 126)
+		if ((int)str[i] < 32 || (int)str[i] == 127)
 			return (0);
 		i++;
 	}
