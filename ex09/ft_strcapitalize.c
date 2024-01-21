@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 00:49:59 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/19 17:47:39 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/21 15:16:49 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_strcapitalize(char *str)
 				&& !is_numeric(str[i - 1]) && is_lowercase(str[i]))
 			str[i] -= 32;
 		else if ((is_lowercase(str[i - 1]) || is_uppercase(str[i - 1])) \
-				&& is_uppercase(str[i]))
+				|| is_numeric(str[i - 1]) && is_uppercase(str[i]))
 			str[i] += 32;
 		i++;
 	}
