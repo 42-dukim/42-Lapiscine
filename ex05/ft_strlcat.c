@@ -6,7 +6,7 @@
 /*   By: dukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:39:32 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/20 23:28:26 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/25 21:10:41 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	while (dest[i] != '\0')
 		i++;
 	dest = dest + i;
-	while (*src != '\0' && j < size - i - 1)
+	while (*src != '\0' && j + i + 1 < size)
 	{
 		*dest++ = *src++;
 		j++;
@@ -28,8 +28,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	while (*src++ != '\0')
 		j++;
 	*dest = '\0';
-	if (i > size - 1)
+	if (i > size)
 		return (j + size);
-	else
-		return (i + j);
+	return (i + j);
 }
