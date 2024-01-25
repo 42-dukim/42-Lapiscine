@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 00:49:59 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/21 15:16:49 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/25 20:03:21 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,18 @@ char	*ft_strcapitalize(char *str)
 		if (!is_uppercase(str[i - 1]) && !is_lowercase(str[i - 1]) \
 				&& !is_numeric(str[i - 1]) && is_lowercase(str[i]))
 			str[i] -= 32;
-		else if ((is_lowercase(str[i - 1]) || is_uppercase(str[i - 1])) \
-				|| is_numeric(str[i - 1]) && is_uppercase(str[i]))
+		else if ((is_lowercase(str[i - 1]) || is_uppercase(str[i - 1]) \
+				|| is_numeric(str[i - 1])) && is_uppercase(str[i]))
 			str[i] += 32;
 		i++;
 	}
 	return (str);
 }
+/*
+#include <stdio.h>
+
+int	main()
+{
+	char str[100] = "salut, comment tu vas ? 42Mots quarante-deux; cinquante+et+un";
+	printf("%s\n", ft_strcapitalize(str));
+}*/
