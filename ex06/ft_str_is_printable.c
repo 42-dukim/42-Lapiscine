@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:49:12 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/21 15:15:19 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/25 19:23:46 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,10 @@ int	ft_str_is_printable(char *str)
 	}
 	return (1);
 }
+/*
+#include <stdio.h>
+
+int	main()
+{
+	printf("%d\n", ft_str_is_printable(""));
+}*/
