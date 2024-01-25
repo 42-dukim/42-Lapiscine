@@ -6,7 +6,7 @@
 /*   By: dukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 17:48:47 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/21 15:42:01 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/25 19:56:50 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	if (size > 0)
+		dest[i] = '\0';
 	while (src[i] != '\0')
 		i++;
 	return (i);
