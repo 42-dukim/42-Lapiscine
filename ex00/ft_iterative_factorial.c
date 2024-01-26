@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 01:27:19 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/26 01:30:59 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/26 19:03:17 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int	ft_iterative_factorial(int nb)
 		factorial *= i++;
 	return (factorial);
 }
-
+/*
 #include <stdio.h>
 
 int	main()
 {
 	printf("%d\n", ft_iterative_factorial(10));
-}
+}*/
