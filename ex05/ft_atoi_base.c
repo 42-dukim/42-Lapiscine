@@ -6,14 +6,14 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:34:31 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/26 01:03:32 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/26 13:51:15 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
 int	is_pass_ch(char ch)
 {
-	if (ch == ' ' || ch == '+' || ch == '-')
+	if ((9 <= ch && ch <= 13) || ch == ' ' \
+			|| ch == '+' || ch == '-')
 		return (1);
 	return (0);
 }
@@ -32,7 +32,7 @@ int	get_base_idx(char ch, char *base)
 	return (-1);
 }
 
-int	ft_atoi(char *str, char *base, int base_len)
+int	atoi_base(char *str, char *base, int base_len)
 {
 	int	minus_cnt;
 	int	state;
@@ -47,7 +47,6 @@ int	ft_atoi(char *str, char *base, int base_len)
 		{
 			sum = sum * base_len + get_base_idx(*str, base);
 			state++;
-			printf("%c -> %d\n", *str, sum);
 		}
 		else if (state)
 			break ;
@@ -89,11 +88,11 @@ int	ft_atoi_base(char *str, char *base)
 	int		base_len;
 
 	base_len = 0;
-	while (base[i] != '\0')
+	while (base[base_len] != '\0')
 		base_len++;
 	if (!is_valid_base(base, base_len))
 		return (0);
-	return (ft_atoi(str, base, base_len));
+	return (atoi_base(str, base, base_len));
 }
 /*
 #include <stdio.h>
@@ -102,6 +101,7 @@ int main()
 	printf("%d\n", ft_atoi_base("---gC351", "g123456789ABCDEF"));
 	printf("%d\n", ft_atoi_base("10000", "01"));
 	printf("%d\n", ft_atoi_base("12557", "01234567"));
+	printf("%d\n", ft_atoi_base("    0-12557", "01234567"));
 	//ft_putnbr_base("2147483648", "0123456789ABCDEF");
 	//ft_putnbr_base(-2147483648, "poneyvif");
 }*/
