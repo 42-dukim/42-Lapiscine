@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 02:03:49 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/26 13:35:32 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/26 13:43:35 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_atoi(char *str)
 		sum = -sum;
 	return (sum);
 }
-
+/*
 #include <stdio.h>
 
 int main()
@@ -65,4 +65,4 @@ int main()
 	printf("%d\n", ft_atoi("---10\n00"));
 	printf("%d\n", ft_atoi("aa12bbf44"));
 	printf("%d\n", ft_atoi("123213213--++122"));
-}
+}*/
