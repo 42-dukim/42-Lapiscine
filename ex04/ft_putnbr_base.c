@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 03:08:47 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/21 16:11:37 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/26 13:45:32 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,12 @@ void	ft_putnbr_base(int nbr, char *base)
 	}
 	else
 		un_nbr = nbr;
-	while (un_nbr)
+	while (1)
 	{
-		str[i] = base[un_nbr % base_len];
+		str[i++] = base[un_nbr % base_len];
 		un_nbr = un_nbr / base_len;
-		i++;
+		if (!un_nbr)
+			break ;
 	}
 	reverse_str(str, i);
 	write(1, str, i);
@@ -93,7 +94,11 @@ void	ft_putnbr_base(int nbr, char *base)
 int main()
 {
 	ft_putnbr_base(-2147483648, "0123456789ABCDEF");
-	ft_putnbr_base(2147483648, "0123456789ABCDEF");
-	ft_putnbr_base(-2147483648, "01");
-	ft_putnbr_base(-2147483648, "poneyvif");
+	write(1, "\n", 1);
+	ft_putnbr_base(0, "0123456789ABCDEF");
+	write(1, "\n", 1);
+	ft_putnbr_base(-2147483647, "01");
+	write(1, "\n", 1);
+	ft_putnbr_base(11111, "poneyvif");
+	write(1, "\n", 1);
 }*/
