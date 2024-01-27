@@ -5,45 +5,61 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 04:27:26 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/16 21:06:12 by dukim            ###   ########.fr       */
+/*   Created: 2024/01/21 01:22:31 by dukim             #+#    #+#             */
+/*   Updated: 2024/01/21 02:02:40 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	putbr_print(char ch[11], int length)
+int	pow_10(int nb)
 {
-	if (length == -1)
-		write(1, "0", 1);
-	while (length > -1)
-	{
-		write(1, &ch[length--], 1);
-	}
+	int	pow;
+
+	if (nb >= 1000000000)
+		return (1000000000);
+	pow = 1;
+	while (pow <= nb)
+		pow *= 10;
+	return (pow / 10);
 }
 
 void	ft_putnbr(int nb)
-{	
-	char	temp[11];
-	int		r_cnt;
+{
+	char	str[11];
+	int		pow;
+	int		idx;
 
-	r_cnt = 0;
-	if (nb == 0)
-		temp[0] = '0';
-	if (nb == -2147483648)
-	{
-		putbr_print("8463847412-", 11);
-		return ;
-	}
-	if (nb < 0)
+	idx = 0;
+	if (nb < 0 && nb != -2147483648)
 	{
 		nb = -nb;
-		write(1, "-", 1);
+		str[idx++] = '-';
 	}
-	while (nb)
+	pow = pow_10(nb);
+	while (pow)
 	{
-		temp[r_cnt++] = nb % 10 + '0';
-		nb = nb / 10;
+		str[idx++] = (nb / pow) + '0';
+		nb = nb % pow;
+		pow /= 10;
 	}
-	putbr_print(temp, r_cnt - 1);
+	if (idx)
+		write(1, str, idx);
+	else if (nb == -2147483648)
+		write(1, "-2147483648", 11);
+	else
+		write(1, "0", 1);
 }
+/*
+int	main()
+{
+	ft_putnbr(0);
+	write(1, "\n", 1);
+	ft_putnbr(2147483647);
+	write(1, "\n", 1);
+	ft_putnbr(-2147483647);
+	write(1, "\n", 1);
+	ft_putnbr(-2147483648);
+	write(1, "\n", 1);
+	ft_putnbr(10000000000);
+}*/
