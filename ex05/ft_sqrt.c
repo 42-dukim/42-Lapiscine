@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 14:09:43 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/27 17:03:21 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/27 22:35:27 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_sqrt(int nb)
 		return (i);
 	return (0);
 }
-
+/*
 #include <stdio.h>
 
 int	main()
@@ -34,4 +34,4 @@ int	main()
 	printf("%d\n", ft_sqrt(-1));
 	printf("%d\n", ft_sqrt(0));
 	printf("%d\n", ft_sqrt(2147483647));
-}
+}*/
