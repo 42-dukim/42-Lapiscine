@@ -6,7 +6,7 @@
 /*   By: dukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:11:29 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/27 18:19:51 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/27 20:01:33 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
 	
-	if (str[0] == '\0' && str[0] == to_find[0])
+	if (to_find[0] == '\0')
 		return (str);
-
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -46,8 +45,8 @@ char	*ft_strstr(char *str, char *to_find)
 
 int	main()
 {
-	char *to_find = "\0 11";
-	char *str = "\0";
+	char *to_find = "";
+	char *str = "";
 	char *ptr = ft_strstr(str, to_find);
 
 	if (ptr != NULL)
