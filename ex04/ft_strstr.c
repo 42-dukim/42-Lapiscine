@@ -6,7 +6,7 @@
 /*   By: dukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:11:29 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/27 20:01:33 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/27 21:27:09 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	is_in_str(char *str_slice, char *to_find)
 	int	i;
 
 	i = 0;
-	while (str_slice[i] != '\0' && to_find[i] != '\0')
+	while (to_find[i] != '\0')
 	{
 		if (str_slice[i] != to_find[i])
 			return (0);
@@ -27,7 +27,7 @@ int	is_in_str(char *str_slice, char *to_find)
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
-	
+
 	if (to_find[0] == '\0')
 		return (str);
 	i = 0;
@@ -45,8 +45,8 @@ char	*ft_strstr(char *str, char *to_find)
 
 int	main()
 {
-	char *to_find = "";
-	char *str = "";
+	char *to_find = "1234";
+	char *str = "12";
 	char *ptr = ft_strstr(str, to_find);
 
 	if (ptr != NULL)
