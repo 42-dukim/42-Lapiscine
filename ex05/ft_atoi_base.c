@@ -6,14 +6,20 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:34:31 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/26 13:51:15 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/31 01:22:59 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_pass_ch(char ch)
+int	is_space_ch(char ch)
 {
-	if ((9 <= ch && ch <= 13) || ch == ' ' \
-			|| ch == '+' || ch == '-')
+	if ((9 <= ch && ch <= 13) || ch == ' ')
+		return (1);
+	return (0);
+}
+
+int	is_sign_ch(char ch)
+{
+	if (ch == '+' || ch == '-')
 		return (1);
 	return (0);
 }
@@ -35,23 +41,21 @@ int	get_base_idx(char ch, char *base)
 int	atoi_base(char *str, char *base, int base_len)
 {
 	int	minus_cnt;
-	int	state;
 	int	sum;
 
 	sum = 0;
 	minus_cnt = 0;
-	state = 0;
-	while (*str != '\0' && (get_base_idx(*str, base) >= 0 || is_pass_ch(*str)))
+	while (is_space_ch(*str))
+		str++;
+	while (is_sign_ch(*str))
 	{
-		if (get_base_idx(*str, base) >= 0)
-		{
-			sum = sum * base_len + get_base_idx(*str, base);
-			state++;
-		}
-		else if (state)
-			break ;
-		else if (*str == '-')
+		if (*str == '-')
 			minus_cnt++;
+		str++;
+	}
+	while (*str != '\0' && get_base_idx(*str, base) >= 0)
+	{
+		sum = sum * base_len + get_base_idx(*str, base);
 		str++;
 	}
 	if (minus_cnt % 2)
@@ -101,7 +105,7 @@ int main()
 	printf("%d\n", ft_atoi_base("---gC351", "g123456789ABCDEF"));
 	printf("%d\n", ft_atoi_base("10000", "01"));
 	printf("%d\n", ft_atoi_base("12557", "01234567"));
-	printf("%d\n", ft_atoi_base("    0-12557", "01234567"));
+	printf("%d\n", ft_atoi_base("--012557", "01234567"));
 	//ft_putnbr_base("2147483648", "0123456789ABCDEF");
 	//ft_putnbr_base(-2147483648, "poneyvif");
 }*/
