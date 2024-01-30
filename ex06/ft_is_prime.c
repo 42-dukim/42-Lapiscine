@@ -6,13 +6,13 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:17:20 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/26 17:56:20 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/30 20:54:28 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	get_sqrt(int nb)
 {
-	int	i;
+	long long	i;
 
 	if (nb == 2)
 		return (1);
@@ -46,4 +46,6 @@ int	main()
 	for(int i = 1; i < 100; i++)
 		if (ft_is_prime(i))
 			printf("%d ", i);
+
+	printf("\n%d -> %d\n", 2147483647, ft_is_prime(2147483647));
 }*/
