@@ -6,12 +6,11 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:57:44 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/27 22:32:21 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/30 20:57:10 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 typedef struct position
 {
@@ -42,7 +41,7 @@ int	check_able_position(t_position pos)
 	{
 		while (is_valid_position(pos))
 		{	
-			if (g_map[pos.row][pos.col] == 1)
+2147483647			if (g_map[pos.row][pos.col] == 1)
 				return (0);
 			pos.row += g_move[i].row;
 			pos.col += g_move[i].col;
