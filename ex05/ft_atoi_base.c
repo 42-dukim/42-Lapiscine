@@ -6,20 +6,13 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:34:31 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/31 01:22:59 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/31 01:28:21 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	is_space_ch(char ch)
 {
 	if ((9 <= ch && ch <= 13) || ch == ' ')
-		return (1);
-	return (0);
-}
-
-int	is_sign_ch(char ch)
-{
-	if (ch == '+' || ch == '-')
 		return (1);
 	return (0);
 }
@@ -47,7 +40,7 @@ int	atoi_base(char *str, char *base, int base_len)
 	minus_cnt = 0;
 	while (is_space_ch(*str))
 		str++;
-	while (is_sign_ch(*str))
+	while (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 			minus_cnt++;
@@ -105,7 +98,7 @@ int main()
 	printf("%d\n", ft_atoi_base("---gC351", "g123456789ABCDEF"));
 	printf("%d\n", ft_atoi_base("10000", "01"));
 	printf("%d\n", ft_atoi_base("12557", "01234567"));
-	printf("%d\n", ft_atoi_base("--012557", "01234567"));
+	printf("%d\n", ft_atoi_base("--\t012557", "01234567"));
 	//ft_putnbr_base("2147483648", "0123456789ABCDEF");
 	//ft_putnbr_base(-2147483648, "poneyvif");
 }*/
