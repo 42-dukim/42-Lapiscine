@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 21:07:29 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/30 21:11:43 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/30 21:15:38 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char *argv[])
 {
 	int	i;
-	int len;
+	int	len;
 
 	i = 1;
 	while (i < argc)
