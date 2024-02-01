@@ -6,13 +6,13 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 21:55:28 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/31 01:56:18 by dukim            ###   ########.fr       */
+/*   Updated: 2024/02/02 01:59:09 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	get_total_len(char **strs, int size, int sep_size)
+int	get_total_len(char **strs, int size, int sep_len)
 {
 	int	total_len;
 	int	i;
@@ -28,7 +28,7 @@ int	get_total_len(char **strs, int size, int sep_size)
 		i++;
 		total_len += j;
 		if (i != size - 1)
-			toal_len += sep_size;
+			total_len += sep_len;
 	}
 	return (total_len);
 }
@@ -51,7 +51,7 @@ int	change_size(int size, char **strs)
 	int	i;
 
 	i = 0;
-	while (strs[i][0] != '\0')
+	while (strs[i] != NULL)
 		i++;
 	if (i < size)
 		size = i;
@@ -79,6 +79,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*str_join;
 	int		total_len;
+	int		sep_len;
 
 	if (size == 0)
 	{
@@ -87,7 +88,10 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		return (str_join);
 	}
 	size = change_size(size, strs);
-	total_len = get_total_len(strs, size);
+	sep_len = 0;
+	while (sep[sep_len] != '\0')
+		sep_len++;
+	total_len = get_total_len(strs, size, sep_len);
 	str_join = (char *)malloc(sizeof(char *) * (total_len + 1));
 	if (!str_join)
 		return (0);
@@ -99,9 +103,9 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 int main()
 {
-	char *str[10] = {"sdfsdf", "2", "3", "4", ""};
-	char *sep = " ";
+	char *str[10] = {"sdfsdf", "2", "3", "4", NULL};
+	char *sep = ", ";
 
-	char *join = ft_strjoin(0, str, sep);
+	char *join = ft_strjoin(1, str, sep);
 	printf("%s\n", join);
 }*/
