@@ -6,33 +6,9 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 03:15:40 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/31 03:55:23 by dukim            ###   ########.fr       */
+/*   Updated: 2024/02/02 02:06:55 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	is_valid_base(char *base, char base_len)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	if (base_len <= 1)
-		return (0);
-	while (i < base_len)
-	{
-		if (base[i] == '+' || base[i] == '-')
-			return (0);
-		j = i + 1;
-		while (j < base_len)
-		{
-			if (base[i] == base[j])
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
 
 int	is_space_ch(char ch)
 {
@@ -78,4 +54,28 @@ int	get_base_len(long long nbr, int base_len)
 		len++;
 	}
 	return (len);
+}
+
+int	is_valid_base(char *base, char base_len)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	if (base_len <= 1)
+		return (0);
+	while (i < base_len)
+	{
+		if (base[i] == '+' || base[i] == '-' || is_space_ch(base[i]))
+			return (0);
+		j = i + 1;
+		while (j < base_len)
+		{
+			if (base[i] == base[j])
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }

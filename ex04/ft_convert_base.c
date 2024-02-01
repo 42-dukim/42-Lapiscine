@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 00:28:39 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/31 03:54:51 by dukim            ###   ########.fr       */
+/*   Updated: 2024/02/02 02:43:56 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int		get_base_idx(char ch, char *base);
 int		get_str_len(char *str);
 int		get_base_len(long long nbr, int base_len);
 
-long long	atoi_base(char *str, char *base, int base_len)
+int	atoi_base(char *str, char *base, int base_len)
 {
-	int			minus_cnt;
-	long long	sum;
+	int	minus_cnt;
+	int	sum;
 
 	sum = 0;
 	minus_cnt = 0;
@@ -82,11 +82,15 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	return (putnbr_base(atoi_base(nbr, base_from, base_from_len), \
 									base_to, base_to_len));
 }
-
 /*
 #include <stdio.h>
 
 int	main()
 {
 	printf("%s\n", ft_convert_base("   \n\n--12345", "0123456789abcdef", "01"));
+	printf("%s\n", ft_convert_base("   \n\n--12345", " \t0123456789abcdef", "01"));
+	printf("%s\n", ft_convert_base("   \n\n--12345", "0123456789abcdef", "\t01"));
+	printf("%s\n", ft_convert_base("   \n\n--12345", "-0123456789abcdef", "\t01"));
+	printf("%s\n", ft_convert_base("", "0123456789abcdef", "0123456789"));
+	printf("%s\n", ft_convert_base("2147483649", "0123456789", "0123456789"));
 }*/
