@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 21:55:28 by dukim             #+#    #+#             */
-/*   Updated: 2024/02/02 01:59:09 by dukim            ###   ########.fr       */
+/*   Updated: 2024/02/02 02:01:00 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,9 +103,9 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 int main()
 {
-	char *str[10] = {"sdfsdf", "2", "3", "4", NULL};
+	char *str[10] = {"sdfsdf", "2", "3", "4", 0};
 	char *sep = ", ";
 
-	char *join = ft_strjoin(1, str, sep);
+	char *join = ft_strjoin(1000, str, sep);
 	printf("%s\n", join);
 }*/
