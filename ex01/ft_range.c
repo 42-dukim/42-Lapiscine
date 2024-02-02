@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 00:35:11 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/28 03:00:23 by dukim            ###   ########.fr       */
+/*   Updated: 2024/02/02 15:24:53 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,18 @@
 int	*ft_range(int min, int max)
 {
 	int	*arr;
-	int	len;
 	int	i;
 
-	len = max - min;
-	if (len <= 0)
+	if (min >= max)
 		return (0);
-	arr = (int *)malloc(len * sizeof(int));
+	arr = (int *)malloc(sizeof(int) * (max - min));
 	if (!arr)
 		return (0);
 	i = 0;
-	while (i < len)
+	while (min < max)
 	{	
-		arr[i] = min + i;
+		arr[i] = min;
+		min++;
 		i++;
 	}
 	return (arr);
@@ -38,9 +37,9 @@ int	*ft_range(int min, int max)
 int	main()
 {
 	int *arr;
-	arr = ft_range(9, 10);
+	arr = ft_range(-10, 11);
 	if (arr)
-		for(int i = 0; i < 10 - 9; i++)
+		for(int i = 0; i < (11 - -10); i++)
 			printf("%d ", arr[i]);
 	else
 		printf("is Null!\n");
