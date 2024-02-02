@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 00:28:39 by dukim             #+#    #+#             */
-/*   Updated: 2024/02/02 02:43:56 by dukim            ###   ########.fr       */
+/*   Updated: 2024/02/02 15:17:46 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ char	*putnbr_base(long long nbr, char *base, int base_len)
 	len = get_base_len(nbr, base_len);
 	if (nbr < 0)
 	{
-		str = (char *)malloc(sizeof(char) * ++len);
+		str = (char *)malloc(sizeof(char) * (++len + 1));
 		str[0] = '-';
 		nbr = -nbr;
 	}
 	else
-		str = (char *)malloc(sizeof(char) * len);
+		str = (char *)malloc(sizeof(char) * (len + 1));
 	i = 1;
 	while (1)
 	{
@@ -66,6 +66,7 @@ char	*putnbr_base(long long nbr, char *base, int base_len)
 		if (!nbr)
 			break ;
 	}
+	str[len] = '\0';
 	return (str);
 }
 
