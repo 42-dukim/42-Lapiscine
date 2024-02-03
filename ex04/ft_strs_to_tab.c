@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:38:04 by dukim             #+#    #+#             */
-/*   Updated: 2024/02/02 20:30:17 by dukim            ###   ########.fr       */
+/*   Updated: 2024/02/03 15:16:22 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		stock[i].size = str_len(av[i]);
 		stock[i].str = av[i];
 		stock[i].copy = (char *)malloc(sizeof(char *) * (stock[i].size + 1));
+		if (!stoc[i].copy)
+			return (0);
 		str_cpy(stock[i].copy, av[i]);
 		i++;
 	}
