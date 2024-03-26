@@ -6,7 +6,7 @@
 /*   By: dukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:11:29 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/27 21:27:09 by dukim            ###   ########.fr       */
+/*   Updated: 2024/01/28 00:12:55 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,14 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	return (0);
 }
-/*
+
 #include <string.h>
 #include <stdio.h>
 
 int	main()
 {
-	char *to_find = "1234";
-	char *str = "12";
+	char *to_find = "122";
+	char *str = "1234";
 	char *ptr = ft_strstr(str, to_find);
 
 	if (ptr != NULL)
@@ -59,4 +59,4 @@ int	main()
 		printf("%s\n", ptr);
 	else
 		printf("is Null!\n");
-}*/
+}
