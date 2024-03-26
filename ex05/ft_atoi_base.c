@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:34:31 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/31 01:28:21 by dukim            ###   ########.fr       */
+/*   Updated: 2024/02/05 00:56:32 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int	ft_atoi_base(char *str, char *base)
 		return (0);
 	return (atoi_base(str, base, base_len));
 }
-/*
+
 #include <stdio.h>
 int main()
 {
@@ -101,4 +101,4 @@ int main()
 	printf("%d\n", ft_atoi_base("--\t012557", "01234567"));
 	//ft_putnbr_base("2147483648", "0123456789ABCDEF");
 	//ft_putnbr_base(-2147483648, "poneyvif");
-}*/
+}
