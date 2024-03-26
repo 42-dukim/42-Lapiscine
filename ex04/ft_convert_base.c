@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 00:28:39 by dukim             #+#    #+#             */
-/*   Updated: 2024/02/02 15:17:46 by dukim            ###   ########.fr       */
+/*   Updated: 2024/02/02 20:02:54 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	return (putnbr_base(atoi_base(nbr, base_from, base_from_len), \
 									base_to, base_to_len));
 }
-/*
+
 #include <stdio.h>
 
 int	main()
@@ -94,4 +94,4 @@ int	main()
 	printf("%s\n", ft_convert_base("   \n\n--12345", "-0123456789abcdef", "\t01"));
 	printf("%s\n", ft_convert_base("", "0123456789abcdef", "0123456789"));
 	printf("%s\n", ft_convert_base("2147483649", "0123456789", "0123456789"));
-}*/
+}

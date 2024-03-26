@@ -6,7 +6,7 @@
 /*   By: dukim <dukim@student.42gyeongsan.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 21:31:46 by dukim             #+#    #+#             */
-/*   Updated: 2024/01/30 21:49:00 by dukim            ###   ########.fr       */
+/*   Updated: 2024/02/02 15:19:31 by dukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 
 int	main()
 {
-	int max = 15, min = 1;
+	int max = 2147483647, min = 0;
 	int *arr;
 	int size = ft_ultimate_range(&arr, min, max);
 
